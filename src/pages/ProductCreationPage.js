@@ -15,7 +15,7 @@ const ProductCreationPage = () => {
       formData.append('images', files[i]);
     }
 
-    const { data } = await axios.post('/api/upload', formData, {
+    const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -27,7 +27,7 @@ const ProductCreationPage = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const imageUrls = await uploadImages(images);
-    await axios.post('/api/cars', {
+    await axios.post(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/cars`, {
       title,
       description,
       images: imageUrls.join(','),

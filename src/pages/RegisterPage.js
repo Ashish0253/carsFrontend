@@ -12,7 +12,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("/api/users/register", {
+      const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/users/register`, {
         name,
         email,
         password,

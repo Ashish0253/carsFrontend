@@ -15,7 +15,7 @@ const ProductDetailPage = () => {
 
   useEffect(() => {
     const fetchCar = async () => {
-      const { data } = await axios.get(`/api/cars/${id}`, {
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/cars/${id}`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem('userInfo')).token}`,
         },
@@ -35,7 +35,7 @@ const ProductDetailPage = () => {
       formData.append('images', files[i]);
     }
 
-    const { data } = await axios.post('/api/upload', formData, {
+    const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/upload`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -47,7 +47,7 @@ const ProductDetailPage = () => {
   const updateHandler = async (e) => {
     e.preventDefault();
     const imageUrls = await uploadImages(images);
-    await axios.put(`/api/cars/${id}`, {
+    await axios.put(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/cars/${id}`, {
       title,
       description,
       images: imageUrls.join(','),
@@ -62,7 +62,7 @@ const ProductDetailPage = () => {
 
   const deleteHandler = async () => {
     try {
-      await axios.delete(`/api/cars/${id}`, {
+      await axios.delete(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/cars/${id}`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem('userInfo')).token}`,
         },

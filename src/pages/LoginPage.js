@@ -11,7 +11,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("/api/users/login", {
+      const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/users/login`, {
         email,
         password,
       });

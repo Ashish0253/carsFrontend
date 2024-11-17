@@ -10,7 +10,7 @@ const ProductListPage = () => {
 
   useEffect(() => {
     const fetchCars = async () => {
-      const { data } = await axios.get('/api/cars', {
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_ORIGIN}/api/cars`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(localStorage.getItem('userInfo')).token}`,
         },
