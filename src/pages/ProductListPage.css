@@ -1,0 +1,90 @@
+.product-list-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-list-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.car-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.car-card:hover {
+  transform: translateY(-10px);
+}
+
+.car-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car-card h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.car-tags {
+  color: #777;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.add-car-button {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.add-car-button:hover {
+  background-color: #555;
+}
+
+.slick-slide img {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .car-list {
+    flex-direction: column;
+  }
+
+  .car-card {
+    width: 100%;
+  }
+}

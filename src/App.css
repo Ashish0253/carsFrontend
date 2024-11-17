@@ -1,38 +1,137 @@
-.App {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header nav button {
+  background-color: #ff4b5c;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 15px;
+}
+
+header nav button:hover {
+  background-color: #ff1c3c;
+}
+
+main {
+  padding: 20px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+form input,
+form textarea,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+ul li img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  header nav a {
+    display: block;
+    margin: 10px 0;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  header nav button {
+    display: block;
+    margin: 10px 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .car-list {
+    flex-direction: column;
+  }
+
+  .car-card {
+    width: 100%;
   }
 }
